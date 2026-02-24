@@ -111,7 +111,7 @@ export default function Home() {
               </div>
             </header>
 
-            <div className="bg-white p-12 rounded-2xl shadow-sm border border-slate-100 min-h-[600px] mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div className="min-h-[600px] mb-20">
               <MarkdownRenderer content={selectedNewsletter.content} />
             </div>
 

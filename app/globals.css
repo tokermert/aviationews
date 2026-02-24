@@ -30,62 +30,65 @@ body {
 }
 
 .prose p {
-  line-height: 2;
-  /* leading-loose equivalent for better readability */
+  line-height: 1.6;
+  /* Revert to normal line height */
   font-size: 1.125rem;
-  /* Reduced by ~2px (18px) */
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  /* Reduced for tighter feel */
   color: #374151;
 }
 
-/* Category headers (usually h1 or h2 in the markdown) */
+/* Category headers (now inside cards) */
 .prose h1,
 .prose h2 {
   font-weight: 800;
-  font-size: 2.375rem;
-  /* Reduced by ~2px (38px) */
-  margin-top: 6rem !important;
-  /* Significant margin before category */
-  margin-bottom: 3rem !important;
-  /* Significant margin after category */
+  font-size: 1.75rem;
+  /* Tighter headers */
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
   color: #0f172a;
   letter-spacing: -0.025em;
-  border-bottom: 1px solid #f1f5f9;
-  padding-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 0.75rem;
 }
 
 .prose h3 {
   font-weight: 700;
-  font-size: 1.375rem;
-  /* Reduced by ~2px (22px) */
-  margin-top: 2.5rem !important;
-  margin-bottom: 1rem !important;
+  font-size: 1.25rem;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
 }
 
-/* Link styling */
+/* Link styling - refined blue */
 .prose a {
   color: #2563eb;
-  /* text-blue-600 */
   text-decoration: underline;
   text-underline-offset: 4px;
-  font-weight: 600;
-  transition: color 0.2s;
+  font-weight: 700;
+  transition: all 0.2s;
 }
 
 .prose a:hover {
-  color: #1e40af;
-  /* text-blue-800 */
-  text-decoration-thickness: 2px;
+  color: #1d4ed8;
+  background: #eff6ff;
 }
 
-/* News items often end with Source line.
-   Focus on general spacing and hierarchy */
+/* Source line tightening */
 .prose strong {
-  margin-top: 1.5rem;
-  display: inline-block;
-  color: #0f172a;
-  font-size: 0.875rem;
-  /* Smaller source text */
+  margin-top: 0 !important;
+  /* Padding kaldırıldı */
+  display: block;
+  color: #64748b;
+  /* Muted slate for source */
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* News item container spacing */
+.prose hr {
+  margin: 2rem 0;
+  border-color: #f1f5f9;
 }
 
 /* Adding clear separator spacing between items if they aren't separated by headers */
