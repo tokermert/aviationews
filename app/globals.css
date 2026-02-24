@@ -38,15 +38,18 @@ body {
   padding-bottom: 0.75rem !important;
 }
 
-/* News headers - FORCE Orange & +2px Larger */
-.prose h3,
-.prose h3 strong {
+/* News Header Orange - Extremely Specific */
+.news-header-orange {
   color: #f97316 !important;
-  font-size: 1.375rem !important;
-  /* 22px approx */
-  font-weight: 800 !important;
-  margin-bottom: 1rem !important;
-  margin-top: 0 !important;
+  font-weight: 900 !important;
+  display: inline !important;
+}
+
+/* Source Label Gray */
+.source-label-gray {
+  color: #64748b !important;
+  font-weight: 600 !important;
+  display: inline !important;
 }
 
 /* Body Text - 17px */
@@ -59,45 +62,47 @@ body {
   margin-bottom: 0.75rem !important;
 }
 
-/* Remove all list dots/markers */
-.prose ul,
-.prose li {
-  list-style: none !important;
+/* Remove all list dots/markers absolutely */
+.prose :where(ul, li, ol):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   list-style-type: none !important;
   padding-left: 0 !important;
   margin-left: 0 !important;
 }
 
-.prose li::before,
+.prose :where(li):not(:where([class~="not-prose"], [class~="not-prose"] *))::before {
+  display: none !important;
+  content: none !important;
+}
+
 .prose li::marker {
   display: none !important;
   content: none !important;
 }
 
-/* SOURCE LINE FIXES (Kaynak Satırı) */
-.prose strong,
-.prose b {
-  color: #64748b !important;
-  font-weight: 700 !important;
-  display: inline !important;
-  /* Ensure it's inline with links */
+/* Space AFTER Source, but NOT BEFORE */
+/* We target the paragraph containing the source label */
+.prose p:has(.source-label-gray),
+.prose li:has(.source-label-gray) {
+  margin-top: -0.75rem !important;
+  /* Revert the margin-bottom of the paragraph above */
+  margin-bottom: 3rem !important;
+  /* Clear gap after the source line */
+}
+
+/* Ensure global horizontal rules don't add space */
+.prose hr {
+  display: none !important;
 }
 
 /* Link styling */
 .prose a {
   color: #2563eb !important;
-  text-decoration: underline !important;
-  text-underline-offset: 4px !important;
   font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
 }
 
 .prose a:hover {
   color: #1d4ed8 !important;
   text-decoration-thickness: 2px !important;
-}
-
-/* General Layout Fixes */
-.prose hr {
-  display: none !important;
-  /* Remove HRs to keep it clean strings as cards */
 }

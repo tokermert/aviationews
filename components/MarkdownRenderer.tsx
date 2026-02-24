@@ -16,23 +16,23 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
         .filter(s => s.length > 0 && s.includes('##'))
 
     return (
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-10">
             {sections.map((section, idx) => (
                 <div
                     key={idx}
-                    className="bg-white p-6 md:p-10 rounded-3xl shadow-sm border border-slate-200/50"
+                    className="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-slate-200/50"
                 >
-                    <div className="prose prose-slate prose-lg max-w-none prose-p:leading-normal">
+                    <div className="prose prose-slate prose-lg max-w-none">
                         <ReactMarkdown
                             remarkPlugins={[remarkGfm]}
                             components={{
                                 // Target bold text (strong/b)
                                 strong: ({ node, ...props }) => {
-                                    const content = String(props.children || '')
-                                    const isSource = content.toLowerCase().startsWith('kaynak')
+                                    const textContent = String(props.children || '')
+                                    const isSource = textContent.toLowerCase().includes('kaynak')
                                     return (
                                         <strong
-                                            className={isSource ? "text-slate-500 font-semibold" : "text-[#f97316] font-extrabold"}
+                                            className={isSource ? "source-label-gray" : "news-header-orange"}
                                             {...props}
                                         />
                                     )
@@ -41,7 +41,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                                 hr: () => null,
                                 // Ensure list items don't have dots
                                 li: ({ node, ...props }) => (
-                                    <li className="list-none ml-0 pl-0" {...props} />
+                                    <li className="list-none ml-0 pl-0 relative before:hidden" {...props} />
                                 ),
                                 ul: ({ node, ...props }) => (
                                     <ul className="list-none ml-0 pl-0" {...props} />
