@@ -27,10 +27,13 @@ body {
   max-width: none !important;
 }
 
-/* Category headers - Blue & Bold */
-.prose h2 {
+/* Category headers - Blue & Bold & No childrens color override */
+.prose h2,
+.prose h2 *,
+.prose h2 strong,
+.prose h2 b {
   color: #2563eb !important;
-  font-size: 1.75rem !important;
+  font-size: 1.875rem !important;
   font-weight: 800 !important;
   margin-top: 0 !important;
   margin-bottom: 2rem !important;

@@ -136,7 +136,6 @@ export default function SourcesPage() {
                                             <div className="w-1.5 h-1.5 rounded-full bg-aviation-accent" />
                                             <span className="text-sm font-bold text-slate-700">{item}</span>
                                         </div>
-                                        <ExternalLink className="w-3 h-3 text-slate-300 group-hover/item:text-aviation-accent transition-colors" />
                                     </li>
                                 ))}
                             </ul>
