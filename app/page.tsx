@@ -99,9 +99,9 @@ export default function Home() {
       {/* Main Content */}
       <section className="flex-1 overflow-y-auto bg-aviation-white/30">
         {selectedNewsletter ? (
-          <article className="max-w-4xl mx-auto py-12 px-8">
-            <header className="mb-12 border-b border-slate-200 pb-8">
-              <h1 className="text-4xl font-black text-aviation-navy mb-6 leading-tight uppercase italic tracking-tighter">
+          <article className="max-w-4xl mx-auto py-8 px-8">
+            <header className="mb-8 border-b border-slate-200 pb-6">
+              <h1 className="text-4xl font-black text-aviation-navy mb-4 leading-tight uppercase italic tracking-tighter">
                 {selectedNewsletter.date}
               </h1>
               <div className="flex items-center gap-4 text-sm text-slate-600 font-semibold">

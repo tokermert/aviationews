@@ -20,24 +20,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* 
-   FORCE TYPOGRAPHY OVERRIDES 
-   Using .prose specificity to guarantee colors and removal of dots
+/*
+   FORCE TYPOGRAPHY OVERRIDES
 */
 .prose {
   max-width: none !important;
 }
 
-/* Category headers - FORCE Blue & +2px Larger */
-.prose h2,
-.prose h2 strong {
+/* Category headers - Blue & Bold */
+.prose h2 {
   color: #2563eb !important;
-  font-size: 1.875rem !important;
-  /* 30px approx */
+  font-size: 1.75rem !important;
   font-weight: 800 !important;
   margin-top: 0 !important;
   margin-bottom: 2rem !important;
-  border-bottom: 2px solid #eff6ff !important;
+  border-bottom: 3px solid #eff6ff !important;
   padding-bottom: 0.75rem !important;
 }
 
@@ -52,28 +49,29 @@ body {
   margin-top: 0 !important;
 }
 
-/* News and Body Text - FORCE 17px */
+/* Body Text - 17px */
 .prose p,
 .prose li {
   font-size: 1.0625rem !important;
-  /* 17px */
+  /* 17px approx */
   line-height: 1.6 !important;
   color: #374151 !important;
   margin-bottom: 0.75rem !important;
 }
 
-/* REMOVE BULLET DOTS (Noktaları kaldır) */
+/* Remove all list dots/markers */
 .prose ul,
 .prose li {
+  list-style: none !important;
   list-style-type: none !important;
   padding-left: 0 !important;
   margin-left: 0 !important;
 }
 
-.prose li::marker,
-.prose li::before {
-  content: none !important;
+.prose li::before,
+.prose li::marker {
   display: none !important;
+  content: none !important;
 }
 
 /* SOURCE LINE FIXES (Kaynak Satırı) */
@@ -85,16 +83,7 @@ body {
   /* Ensure it's inline with links */
 }
 
-/* Space AFTER Source, but NOT BEFORE */
-/* We target the paragraph or list item containing "Kaynak" */
-.prose li:has(strong),
-.prose p:has(strong) {
-  margin-top: 0 !important;
-  margin-bottom: 2.5rem !important;
-  /* Spacing AFTER source */
-}
-
-/* LINKS */
+/* Link styling */
 .prose a {
   color: #2563eb !important;
   text-decoration: underline !important;
