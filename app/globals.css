@@ -38,55 +38,58 @@ body {
   padding-bottom: 0.75rem !important;
 }
 
-/* News Header Orange - Extremely Specific */
+/* News titles - Force Orange */
 .news-header-orange {
   color: #f97316 !important;
   font-weight: 900 !important;
   display: inline !important;
 }
 
-/* Source Label Gray */
+/* Source labels - Gray */
 .source-label-gray {
   color: #64748b !important;
   font-weight: 600 !important;
   display: inline !important;
 }
 
-/* Body Text - 17px */
+/* Body Text & List items - 17px & No Dots */
 .prose p,
-.prose li {
+.prose li,
+.prose ul,
+.prose ol {
   font-size: 1.0625rem !important;
-  /* 17px approx */
+  /* 17px */
   line-height: 1.6 !important;
   color: #374151 !important;
-  margin-bottom: 0.75rem !important;
-}
-
-/* Remove all list dots/markers absolutely */
-.prose :where(ul, li, ol):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  list-style: none !important;
   list-style-type: none !important;
   padding-left: 0 !important;
   margin-left: 0 !important;
+  margin-bottom: 0.75rem !important;
 }
 
-.prose :where(li):not(:where([class~="not-prose"], [class~="not-prose"] *))::before {
+.prose li::marker,
+.prose li::before,
+.prose ul::marker,
+.prose ul::before {
   display: none !important;
   content: none !important;
 }
 
-.prose li::marker {
-  display: none !important;
-  content: none !important;
-}
-
-/* Space AFTER Source, but NOT BEFORE */
-/* We target the paragraph containing the source label */
+/* Spacing: News -> Source (No gap) */
+/* Spacing: Source -> Next Item (Gap) */
 .prose p:has(.source-label-gray),
 .prose li:has(.source-label-gray) {
-  margin-top: -0.75rem !important;
-  /* Revert the margin-bottom of the paragraph above */
+  margin-top: -0.5rem !important;
+  /* Pull up towards news */
   margin-bottom: 3rem !important;
-  /* Clear gap after the source line */
+  /* Gap after source */
+}
+
+/* Parent paragraph of a news header should have normal bottom margin */
+.prose p:has(.news-header-orange),
+.prose li:has(.news-header-orange) {
+  margin-bottom: 0.75rem !important;
 }
 
 /* Ensure global horizontal rules don't add space */
