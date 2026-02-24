@@ -65,27 +65,26 @@ export default function Home() {
               key={newsletter.id}
               onClick={() => setSelectedNewsletter(newsletter)}
               className={cn(
-                "w-full text-left p-5 transition-all outline-none flex items-center justify-between group",
+                "w-full text-left p-6 transition-all outline-none flex items-center justify-between group",
                 selectedNewsletter?.id === newsletter.id
-                  ? "bg-aviation-navy text-white"
-                  : "hover:bg-aviation-white text-slate-600"
+                  ? "bg-slate-50"
+                  : "hover:bg-slate-50/50"
               )}
             >
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-2">
-                  <Calendar className={cn("w-4 h-4", selectedNewsletter?.id === newsletter.id ? "text-aviation-accent" : "text-slate-400")} />
-                  <span className="font-medium">{newsletter.date}</span>
+                  <Calendar className={cn("w-4 h-4", selectedNewsletter?.id === newsletter.id ? "text-aviation-navy" : "text-slate-400")} />
+                  <span className={cn(
+                    "font-bold text-lg tracking-tight",
+                    selectedNewsletter?.id === newsletter.id ? "text-black" : "text-slate-600"
+                  )}>
+                    {newsletter.date}
+                  </span>
                 </div>
-                <span className={cn(
-                  "text-xs font-semibold uppercase tracking-wider",
-                  selectedNewsletter?.id === newsletter.id ? "text-aviation-accent/90" : "text-slate-500"
-                )}>
-                  Aviation Pulse Günlük Özeti
-                </span>
               </div>
               <ChevronRight className={cn(
-                "w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity",
-                selectedNewsletter?.id === newsletter.id && "opacity-100"
+                "w-5 h-5 transition-all",
+                selectedNewsletter?.id === newsletter.id ? "text-aviation-navy opacity-100 translate-x-1" : "text-slate-300 opacity-0 group-hover:opacity-100"
               )} />
             </button>
           ))}

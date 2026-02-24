@@ -90,22 +90,22 @@ export default function SourcesPage() {
     return (
         <div className="bg-white min-h-screen">
             {/* Hero Section */}
-            <section className="bg-aviation-navy text-white py-24 px-6 relative overflow-hidden">
+            <section className="bg-white border-b border-slate-100 py-24 px-6 relative overflow-hidden">
                 <div className="max-w-6xl mx-auto relative z-10">
-                    <div className="flex items-center gap-3 text-aviation-accent mb-6">
+                    <div className="flex items-center gap-3 text-black mb-6">
                         <BookOpen className="w-6 h-6" />
-                        <span className="text-sm font-bold uppercase tracking-[0.3em]">Kütüphane</span>
+                        <span className="text-sm font-black uppercase tracking-[0.3em]">Kütüphane</span>
                     </div>
-                    <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter uppercase italic">
-                        Bülten <span className="text-aviation-accent italic">Kaynaklarımız</span>
+                    <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter uppercase italic text-black">
+                        Bülten <span className="text-aviation-navy uppercase not-italic">Kaynaklarımız</span>
                     </h1>
-                    <p className="text-aviation-silver text-xl md:text-2xl max-w-3xl leading-relaxed font-light">
-                        Sektörün nabzını tutmak için her gün taradığımız <span className="text-white font-bold italic">100'den fazla</span> global havacılık ve teknoloji kaynağı.
+                    <p className="text-black text-xl md:text-2xl max-w-3xl leading-relaxed font-semibold">
+                        Sektörün nabzını tutmak için her gün taradığımız <span className="bg-aviation-accent/30 px-2 py-1 rounded">100'den fazla</span> global havacılık ve teknoloji kaynağı.
                     </p>
                 </div>
                 {/* Abstract Background Element */}
-                <div className="absolute -bottom-24 -right-24 w-96 h-96 opacity-10">
-                    <Plane className="w-full h-full -rotate-45" />
+                <div className="absolute -bottom-24 -right-24 w-96 h-96 opacity-5 pointer-events-none">
+                    <Plane className="w-full h-full -rotate-45 text-black" />
                 </div>
             </section>
 
