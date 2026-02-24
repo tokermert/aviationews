@@ -7,8 +7,8 @@ import { Plane } from "lucide-react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Aviation Pulse | Daily Industry Newsletter",
-  description: "Modern aviation and airport operations insights.",
+  title: "Aviation Pulse | Weekly Industry Newsletter",
+  description: "Aviation and airport industry weekly newsletter",
 };
 
 export default function RootLayout({
