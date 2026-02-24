@@ -57,7 +57,7 @@ export default function Home() {
       {/* Sidebar */}
       <aside className="w-80 border-r border-slate-200 bg-white overflow-y-auto flex-shrink-0">
         <div className="p-4 border-b border-slate-100 bg-slate-50/50">
-          <h2 className="text-sm font-semibold text-aviation-navy uppercase tracking-wider">Günlük Bültenler</h2>
+          <h2 className="text-xs font-semibold text-aviation-navy uppercase tracking-wider">Haftalık Bültenler</h2>
         </div>
         <nav className="divide-y divide-slate-100">
           {newsletters.map((newsletter) => (
@@ -75,7 +75,7 @@ export default function Home() {
                 <div className="flex items-center gap-2">
                   <Calendar className={cn("w-4 h-4", selectedNewsletter?.id === newsletter.id ? "text-aviation-navy" : "text-slate-400")} />
                   <span className={cn(
-                    "font-bold text-lg tracking-tight",
+                    "font-bold text-base tracking-tight",
                     selectedNewsletter?.id === newsletter.id ? "text-black" : "text-slate-600"
                   )}>
                     {newsletter.date}
@@ -101,11 +101,7 @@ export default function Home() {
         {selectedNewsletter ? (
           <article className="max-w-4xl mx-auto py-12 px-8">
             <header className="mb-12 border-b border-slate-200 pb-8">
-              <div className="flex items-center gap-2 text-aviation-navy/70 mb-4 uppercase tracking-[0.2em] text-[10px] font-extrabold">
-                <div className="w-8 h-[2px] bg-aviation-accent"></div>
-                Günlük Sektör Analizi
-              </div>
-              <h1 className="text-5xl font-black text-aviation-navy mb-6 leading-tight uppercase italic tracking-tighter">
+              <h1 className="text-4xl font-black text-aviation-navy mb-6 leading-tight uppercase italic tracking-tighter">
                 {selectedNewsletter.date}
               </h1>
               <div className="flex items-center gap-4 text-sm text-slate-600 font-semibold">

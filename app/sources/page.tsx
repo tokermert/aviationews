@@ -96,10 +96,10 @@ export default function SourcesPage() {
                         <BookOpen className="w-6 h-6" />
                         <span className="text-sm font-black uppercase tracking-[0.3em]">Kütüphane</span>
                     </div>
-                    <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter uppercase italic text-black">
+                    <h1 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter uppercase italic text-black">
                         Bülten <span className="text-aviation-navy uppercase not-italic">Kaynaklarımız</span>
                     </h1>
-                    <p className="text-black text-xl md:text-2xl max-w-3xl leading-relaxed font-semibold">
+                    <p className="text-black text-lg md:text-xl max-w-3xl leading-relaxed font-semibold">
                         Sektörün nabzını tutmak için her gün taradığımız <span className="bg-aviation-accent/30 px-2 py-1 rounded">100'den fazla</span> global havacılık ve teknoloji kaynağı.
                     </p>
                 </div>

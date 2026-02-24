@@ -24,11 +24,11 @@ export default function RootLayout({
             <div className="bg-aviation-navy p-2 rounded-lg group-hover:bg-aviation-navy/90 transition-colors">
               <Plane className="w-6 h-6 text-aviation-accent" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-black">AVIATION <span className="text-aviation-navy">PULSE</span></span>
+            <span className="text-lg font-bold tracking-tight text-black">AVIATION <span className="text-aviation-navy">PULSE</span></span>
           </Link>
           <nav className="flex items-center gap-8">
-            <Link href="/" className="text-sm font-bold text-black hover:text-aviation-navy transition-colors tracking-wide">Bültenler</Link>
-            <Link href="/sources" className="text-sm font-bold text-black hover:text-aviation-navy transition-colors tracking-wide">Kaynaklar</Link>
+            <Link href="/" className="text-xs font-bold text-black hover:text-aviation-navy transition-colors tracking-wide">Bültenler</Link>
+            <Link href="/sources" className="text-xs font-bold text-black hover:text-aviation-navy transition-colors tracking-wide">Kaynaklar</Link>
           </nav>
         </header>
         <main className="flex-1 mt-16">
