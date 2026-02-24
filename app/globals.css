@@ -41,11 +41,28 @@ body {
   padding-bottom: 0.75rem !important;
 }
 
+@media (max-width: 768px) {
+
+  .prose h2,
+  .prose h2 *,
+  .prose h2 strong,
+  .prose h2 b {
+    font-size: 1.5rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+}
+
 /* News titles - Force Orange */
 .news-header-orange {
   color: #f97316 !important;
   font-weight: 900 !important;
   display: inline !important;
+}
+
+@media (max-width: 768px) {
+  .news-header-orange {
+    font-size: 1.125rem !important;
+  }
 }
 
 /* Source labels - Gray */
