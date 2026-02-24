@@ -20,108 +20,95 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Medium-like reading experience overrides */
+/* 
+   FORCE TYPOGRAPHY OVERRIDES 
+   Using .prose specificity to guarantee colors and removal of dots
+*/
 .prose {
-  max-width: none;
-  --tw-prose-body: #374151;
-  --tw-prose-headings: #0f172a;
-  --tw-prose-links: #2563eb;
-  --tw-prose-bold: #0f172a;
+  max-width: none !important;
 }
 
-.prose p {
-  line-height: 1.6;
-  font-size: 1.0625rem;
-  /* Reduced by 1px (17px) */
-  margin-bottom: 1rem;
-  /* Tightened */
-  color: #374151 !important;
-}
-
-/* Category headers - Blue & 2px larger */
-.prose h1,
-.prose h2 {
-  font-weight: 800;
+/* Category headers - FORCE Blue & +2px Larger */
+.prose h2,
+.prose h2 strong {
+  color: #2563eb !important;
   font-size: 1.875rem !important;
-  /* Increased by 2px (30px) */
+  /* 30px approx */
+  font-weight: 800 !important;
   margin-top: 0 !important;
   margin-bottom: 2rem !important;
-  color: #2563eb !important;
-  /* Corporate Blue */
-  letter-spacing: -0.025em;
   border-bottom: 2px solid #eff6ff !important;
   padding-bottom: 0.75rem !important;
 }
 
-/* News headers - Orange & 2px larger */
-.prose h3 {
-  font-weight: 800;
-  font-size: 1.375rem !important;
-  /* Increased by 2px (22px) */
-  margin-top: 2rem !important;
-  margin-bottom: 1rem !important;
+/* News headers - FORCE Orange & +2px Larger */
+.prose h3,
+.prose h3 strong {
   color: #f97316 !important;
-  /* Aviation/News Orange */
-  letter-spacing: -0.01em;
+  font-size: 1.375rem !important;
+  /* 22px approx */
+  font-weight: 800 !important;
+  margin-bottom: 1rem !important;
+  margin-top: 0 !important;
 }
 
-/* Link styling */
+/* News and Body Text - FORCE 17px */
+.prose p,
+.prose li {
+  font-size: 1.0625rem !important;
+  /* 17px */
+  line-height: 1.6 !important;
+  color: #374151 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* REMOVE BULLET DOTS (Noktaları kaldır) */
+.prose ul,
+.prose li {
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.prose li::marker,
+.prose li::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* SOURCE LINE FIXES (Kaynak Satırı) */
+.prose strong,
+.prose b {
+  color: #64748b !important;
+  font-weight: 700 !important;
+  display: inline !important;
+  /* Ensure it's inline with links */
+}
+
+/* Space AFTER Source, but NOT BEFORE */
+/* We target the paragraph or list item containing "Kaynak" */
+.prose li:has(strong),
+.prose p:has(strong) {
+  margin-top: 0 !important;
+  margin-bottom: 2.5rem !important;
+  /* Spacing AFTER source */
+}
+
+/* LINKS */
 .prose a {
   color: #2563eb !important;
   text-decoration: underline !important;
-  text-underline-offset: 4px;
-  font-weight: 700;
-  transition: all 0.2s;
-  font-size: inherit;
-  /* Matches parent size */
+  text-underline-offset: 4px !important;
+  font-weight: 700 !important;
 }
 
 .prose a:hover {
   color: #1d4ed8 !important;
-  background: #eff6ff;
+  text-decoration-thickness: 2px !important;
 }
 
-/* Source line tightening and formatting */
-.prose strong {
-  margin-top: 0 !important;
-  /* Move closer to text above */
-  padding-top: 0 !important;
-  display: inline-block;
-  color: #64748b !important;
-  font-size: 1.0625rem !important;
-  /* Same as main text (17px) */
-  font-weight: 600;
-}
-
-/* Handle source paragraph specifically */
-.prose p:has(strong) {
-  margin-top: -0.25rem !important;
-  /* Tighten paragraph containing source */
-  margin-bottom: 2.5rem !important;
-  /* Kaynak sonrası bir satır boşluk */
-}
-
-/* Remove bullets if strong is inside a list or has custom markers */
-.prose li::marker {
-  color: #2563eb !important;
-}
-
+/* General Layout Fixes */
 .prose hr {
-  margin: 3rem 0;
-  border-color: #f1f5f9;
-}
-
-/* Adding clear separator spacing between items if they aren't separated by headers */
-.prose blockquote {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-left-color: #2563eb;
-  font-style: italic;
-  font-size: 1.125rem;
-}
-
-/* Spacing before Kaynak satırı if it follows a paragraph */
-.prose p+p {
-  margin-top: -1.5rem;
-  /* Reduce default margin-bottom of previous p for content spacing */
+  display: none !important;
+  /* Remove HRs to keep it clean strings as cards */
 }
