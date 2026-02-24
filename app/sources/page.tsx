@@ -1,77 +1,139 @@
-import { BookOpen, ShieldCheck, Cpu, Globe, Newspaper, Plane } from "lucide-react";
+import { BookOpen, Plane, Globe, Cpu, ShieldCheck, Newspaper, Briefcase, Database, Search, ShoppingBag, Luggage, BarChart } from "lucide-react";
+import React from "react";
 
-const categories = [
+const sourcesData = [
     {
-        title: "Havalimanı İşletme & Yönetim",
-        icon: <Globe className="w-6 h-6" />,
+        category: "Havalimanı İşletme ve Yönetim",
+        icon: <Globe className="w-5 h-5" />,
         items: [
-            { name: "ACI World - Airports Council International", url: "#" },
-            { name: "IATA Airport Operations Hub", url: "#" },
-            { name: "Eurocontrol Operations Portal", url: "#" },
+            "TAV Airports", "Fraport", "Groupe ADP", "VINCI Airports", "GMR Airports",
+            "Changi Airport Group", "MAG", "Copenhagen Airports (CPH)", "AENA",
+            "Airports of Thailand (AOT)", "Royal Schiphol Group", "Heathrow Airport (LHR)",
+            "Dubai Airports (DXB)", "Incheon International Airport (ICN)"
         ]
     },
     {
-        title: "Teknoloji & Biyometri",
-        icon: <Cpu className="w-6 h-6" />,
+        category: "Yolcu Teknolojileri, IT ve Biyometri",
+        icon: <Cpu className="w-5 h-5" />,
         items: [
-            { name: "SITA - Air Transport IT Insights", url: "#" },
-            { name: "Biometrics Institute Resources", url: "#" },
-            { name: "Airport Technology Research", url: "#" },
+            "SITA", "Amadeus", "Collins Aerospace", "IDEMIA", "NEC", "Thales Group",
+            "Damarel", "Inform (GroundStar)", "ADB SAFEGATE", "Airport Labs",
+            "Vision-Box", "Gunnebo"
         ]
     },
     {
-        title: "Yer Hizmetleri & Lojistik",
-        icon: <ShieldCheck className="w-6 h-6" />,
+        category: "Operasyon Analitiği, RMS/FMS ve Yapay Zeka",
+        icon: <BarChart className="w-5 h-5" />,
         items: [
-            { name: "ASA - Airport Services Association", url: "#" },
-            { name: "IATA Ground Operations Manual (IGOM)", url: "#" },
-            { name: "Ground Handling International", url: "#" },
+            "Veovo", "Xovis", "Irisys", "Lelystad / Outsight", "RIMOWA / Materna IPS",
+            "Assaia", "AeroCloud", "Searidge Technologies", "Brock Solutions"
         ]
     },
     {
-        title: "Medya & Haber Kaynakları",
-        icon: <Newspaper className="w-6 h-6" />,
+        category: "Yer Hizmetleri ve Kargo",
+        icon: <ShieldCheck className="w-5 h-5" />,
         items: [
-            { name: "The Moodie Davitt Report", url: "#" },
-            { name: "FlightGlobal Air Transport News", url: "#" },
-            { name: "Airport World Magazine", url: "#" },
+            "Swissport", "Menzies Aviation", "Dnata", "Worldwide Flight Services (WFS)",
+            "Çelebi Ground Handling", "Viggo"
         ]
+    },
+    {
+        category: "Premium Yolcu Hizmetleri ve Lounge",
+        icon: <Briefcase className="w-5 h-5" />,
+        items: [
+            "PrimeClass", "DragonPass", "Plaza Premium Group", "LoungeKey",
+            "Priority Pass", "No1 Lounges", "Servisair / Swissport Lounges"
+        ]
+    },
+    {
+        category: "Havacılık Verisi ve İstihbarat",
+        icon: <Database className="w-5 h-5" />,
+        items: ["Cirium", "OAG"]
+    },
+    {
+        category: "Bagaj Otomasyonu ve Lojistik",
+        icon: <Luggage className="w-5 h-5" />,
+        items: ["Vanderlande", "BEUMER Group", "Siemens Logistics", "Leonardo"]
+    },
+    {
+        category: "Güvenlik ve Tarama Sistemleri",
+        icon: <Search className="w-5 h-5" />,
+        items: ["Smiths Detection", "Analogic / L3Harris", "Rohde & Schwarz"]
+    },
+    {
+        category: "Havalimanı Perakende & Ticari Gelirler",
+        icon: <ShoppingBag className="w-5 h-5" />,
+        items: ["Avolta", "SSP Group"]
+    },
+    {
+        category: "Sektörel Medya ve Yayınlar",
+        icon: <Newspaper className="w-5 h-5" />,
+        items: [
+            "The Moodie Davitt Report", "Airport Technology", "Aviation Week",
+            "Runway Girl Network", "Business Travel News (BTN)",
+            "Future Travel Experience (FTE)", "AirportWorld", "ch-aviation"
+        ]
+    },
+    {
+        category: "Organizasyonlar ve Birlikler",
+        icon: <Plane className="w-5 h-5" />,
+        items: ["ACI World", "IATA", "SITA IT Insights"]
+    },
+    {
+        category: "Finans, Yatırım ve Kurumsal Takip",
+        icon: <BarChart className="w-5 h-5" />,
+        items: ["Crunchbase", "PitchBook", "Bloomberg Terminal", "Reuters", "Dealroom"]
     }
 ];
 
 export default function SourcesPage() {
     return (
-        <div className="bg-aviation-white/30 min-h-screen py-20 px-6">
-            <div className="max-w-6xl mx-auto">
-                <header className="mb-20 text-center">
-                    <div className="inline-flex items-center justify-center p-3 bg-aviation-navy text-aviation-accent rounded-2xl mb-6 shadow-xl">
-                        <BookOpen className="w-8 h-8" />
+        <div className="bg-white min-h-screen">
+            {/* Hero Section */}
+            <section className="bg-aviation-navy text-white py-24 px-6 relative overflow-hidden">
+                <div className="max-w-6xl mx-auto relative z-10">
+                    <div className="flex items-center gap-3 text-aviation-accent mb-6">
+                        <BookOpen className="w-6 h-6" />
+                        <span className="text-sm font-bold uppercase tracking-[0.3em]">Kütüphane</span>
                     </div>
-                    <h1 className="text-4xl font-black text-aviation-navy mb-4 tracking-tight">SEKTÖREL KAYNAKLAR</h1>
-                    <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-                        Havacılık ve havalimanı ekosistemine dair en güvenilir, güncel ve akademik kaynakların toplandığı kurumsal kütüphane.
+                    <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter uppercase italic">
+                        Bülten <span className="text-aviation-accent italic">Kaynaklarımız</span>
+                    </h1>
+                    <p className="text-aviation-silver text-xl md:text-2xl max-w-3xl leading-relaxed font-light">
+                        Sektörün nabzını tutmak için her gün taradığımız <span className="text-white font-bold italic">100'den fazla</span> global havacılık ve teknoloji kaynağı.
                     </p>
-                </header>
+                </div>
+                {/* Abstract Background Element */}
+                <div className="absolute -bottom-24 -right-24 w-96 h-96 opacity-10">
+                    <Plane className="w-full h-full -rotate-45" />
+                </div>
+            </section>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-                    {categories.map((category, idx) => (
-                        <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="p-3 bg-aviation-white text-aviation-navy rounded-xl group-hover:bg-aviation-navy group-hover:text-white transition-colors duration-300">
+            {/* Grid Section */}
+            <div className="max-w-7xl mx-auto py-20 px-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {sourcesData.map((category, idx) => (
+                        <div
+                            key={idx}
+                            className="group bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl hover:border-aviation-accent/30 transition-all duration-500 flex flex-col"
+                        >
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="p-3 bg-aviation-navy text-aviation-accent rounded-xl shadow-inner group-hover:scale-110 transition-transform duration-300">
                                     {category.icon}
                                 </div>
-                                <h2 className="text-xl font-bold text-aviation-navy tracking-tight">{category.title}</h2>
+                                <h2 className="text-lg font-bold text-aviation-navy leading-tight tracking-tight">
+                                    {category.category}
+                                </h2>
                             </div>
-                            <ul className="space-y-4">
+
+                            <ul className="space-y-3 flex-1">
                                 {category.items.map((item, itemIdx) => (
-                                    <li key={itemIdx}>
-                                        <a
-                                            href={item.url}
-                                            className="flex items-center justify-between p-4 rounded-xl bg-slate-50 text-slate-600 hover:bg-aviation-navy hover:text-white transition-all font-medium"
-                                        >
-                                            {item.name}
-                                            <span className="text-[10px] uppercase font-bold tracking-widest opacity-60">İncele</span>
-                                        </a>
+                                    <li
+                                        key={itemIdx}
+                                        className="flex items-center gap-3 text-slate-500 group-hover:text-slate-700 transition-colors"
+                                    >
+                                        <div className="w-1.5 h-1.5 rounded-full bg-aviation-accent/40 group-hover:bg-aviation-accent" />
+                                        <span className="text-sm font-medium">{item}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -79,21 +141,14 @@ export default function SourcesPage() {
                     ))}
                 </div>
 
-                <section className="bg-aviation-navy text-white p-12 rounded-[2rem] shadow-2xl relative overflow-hidden">
-                    <div className="relative z-10 max-w-2xl">
-                        <h3 className="text-3xl font-bold mb-6 italic tracking-tighter">İşbirliği ve Kaynak Paylaşımı</h3>
-                        <p className="text-aviation-silver text-lg leading-relaxed mb-8">
-                            Kütüphanemize eklenmesini istediğiniz veya sektör için değerli gördüğünüz kaynakları bizimle paylaşabilirsiniz.
-                        </p>
-                        <button className="bg-aviation-accent text-aviation-navy px-8 py-4 rounded-xl font-black uppercase text-sm tracking-widest hover:scale-105 transition-transform">
-                            Bize Ulaşın
-                        </button>
-                    </div>
-                    <div className="absolute top-0 right-0 w-1/3 h-full opacity-10 flex items-center justify-center">
-                        <Plane className="w-64 h-64 -rotate-45" />
-                    </div>
-                </section>
+                {/* Footer Info */}
+                <footer className="mt-32 text-center border-t border-slate-100 pt-16 pb-20">
+                    <p className="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
+                        Kaynak listemiz sektördeki gelişmelere paralel olarak sürekli güncellenmektedir.
+                        Eksik olduğunu düşündüğünüz kritik bir kaynak varsa lütfen editör ekibimizle iletişime geçin.
+                    </p>
+                </footer>
             </div>
         </div>
-    )
+    );
 }
