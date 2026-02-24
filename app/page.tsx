@@ -77,8 +77,8 @@ export default function Home() {
                   <span className="font-medium">{newsletter.date}</span>
                 </div>
                 <span className={cn(
-                  "text-xs",
-                  selectedNewsletter?.id === newsletter.id ? "text-aviation-accent/80" : "text-slate-400"
+                  "text-xs font-semibold uppercase tracking-wider",
+                  selectedNewsletter?.id === newsletter.id ? "text-aviation-accent/90" : "text-slate-500"
                 )}>
                   Aviation Pulse Günlük Özeti
                 </span>
@@ -102,16 +102,16 @@ export default function Home() {
         {selectedNewsletter ? (
           <article className="max-w-4xl mx-auto py-12 px-8">
             <header className="mb-12 border-b border-slate-200 pb-8">
-              <div className="flex items-center gap-2 text-aviation-muted mb-4 uppercase tracking-[0.2em] text-[10px] font-bold">
+              <div className="flex items-center gap-2 text-aviation-navy/70 mb-4 uppercase tracking-[0.2em] text-[10px] font-extrabold">
                 <div className="w-8 h-[2px] bg-aviation-accent"></div>
                 Günlük Sektör Analizi
               </div>
               <h1 className="text-5xl font-black text-aviation-navy mb-6 leading-tight uppercase italic tracking-tighter">
                 {selectedNewsletter.date}
               </h1>
-              <div className="flex items-center gap-4 text-sm text-slate-500 font-medium">
+              <div className="flex items-center gap-4 text-sm text-slate-600 font-semibold">
                 <span>By Aviation Pulse Editorial</span>
-                <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
+                <span className="w-1 h-1 bg-slate-400 rounded-full"></span>
                 <span>Okuma Süresi: 5 dk</span>
               </div>
             </header>

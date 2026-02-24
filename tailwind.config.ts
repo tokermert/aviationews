@@ -16,9 +16,9 @@ export default {
                     "navy-light": "#112240",
                     "navy-lighter": "#233554",
                     accent: "#64FFDA",
-                    muted: "#8892B0",
-                    silver: "#CCD6F6",
-                    white: "#E6F1FF",
+                    muted: "#4B5563", // Darker for better contrast (Slate 600)
+                    silver: "#8892B0", // Slightly darker (previous muted)
+                    white: "#F8FAFC",
                 }
             },
             fontFamily: {

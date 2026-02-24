@@ -27,8 +27,8 @@ export default function RootLayout({
             <span className="text-xl font-bold tracking-tight">AVIATION <span className="text-aviation-accent">PULSE</span></span>
           </Link>
           <nav className="flex items-center gap-8">
-            <Link href="/" className="text-sm font-medium hover:text-aviation-accent transition-colors">Bültenler</Link>
-            <Link href="/sources" className="text-sm font-medium hover:text-aviation-accent transition-colors">Kaynaklar</Link>
+            <Link href="/" className="text-sm font-semibold text-slate-300 hover:text-white transition-colors tracking-wide">Bültenler</Link>
+            <Link href="/sources" className="text-sm font-semibold text-slate-300 hover:text-white transition-colors tracking-wide">Kaynaklar</Link>
           </nav>
         </header>
         <main className="flex-1 mt-16">

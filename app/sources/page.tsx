@@ -1,4 +1,4 @@
-import { BookOpen, Plane, Globe, Cpu, ShieldCheck, Newspaper, Briefcase, Database, Search, ShoppingBag, Luggage, BarChart } from "lucide-react";
+import { BookOpen, Plane, Globe, Cpu, ShieldCheck, Newspaper, Briefcase, Database, Search, ShoppingBag, Luggage, BarChart, ExternalLink } from "lucide-react";
 import React from "react";
 
 const sourcesData = [
@@ -115,10 +115,10 @@ export default function SourcesPage() {
                     {sourcesData.map((category, idx) => (
                         <div
                             key={idx}
-                            className="group bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl hover:border-aviation-accent/30 transition-all duration-500 flex flex-col"
+                            className="group bg-white rounded-3xl border border-slate-200 p-8 shadow-sm hover:shadow-2xl hover:border-aviation-accent/50 transition-all duration-500 flex flex-col"
                         >
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="p-3 bg-aviation-navy text-aviation-accent rounded-xl shadow-inner group-hover:scale-110 transition-transform duration-300">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="p-3 bg-aviation-navy text-aviation-accent rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                                     {category.icon}
                                 </div>
                                 <h2 className="text-lg font-bold text-aviation-navy leading-tight tracking-tight">
@@ -126,14 +126,17 @@ export default function SourcesPage() {
                                 </h2>
                             </div>
 
-                            <ul className="space-y-3 flex-1">
+                            <ul className="space-y-4 flex-1">
                                 {category.items.map((item, itemIdx) => (
                                     <li
                                         key={itemIdx}
-                                        className="flex items-center gap-3 text-slate-500 group-hover:text-slate-700 transition-colors"
+                                        className="flex items-center justify-between group/item p-2 -mx-2 rounded-lg hover:bg-slate-50 transition-colors"
                                     >
-                                        <div className="w-1.5 h-1.5 rounded-full bg-aviation-accent/40 group-hover:bg-aviation-accent" />
-                                        <span className="text-sm font-medium">{item}</span>
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-aviation-accent" />
+                                            <span className="text-sm font-bold text-slate-700">{item}</span>
+                                        </div>
+                                        <ExternalLink className="w-3 h-3 text-slate-300 group-hover/item:text-aviation-accent transition-colors" />
                                     </li>
                                 ))}
                             </ul>
@@ -143,7 +146,7 @@ export default function SourcesPage() {
 
                 {/* Footer Info */}
                 <footer className="mt-32 text-center border-t border-slate-100 pt-16 pb-20">
-                    <p className="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-slate-600 text-sm max-w-2xl mx-auto leading-relaxed font-semibold">
                         Kaynak listemiz sektördeki gelişmelere paralel olarak sürekli güncellenmektedir.
                         Eksik olduğunu düşündüğünüz kritik bir kaynak varsa lütfen editör ekibimizle iletişime geçin.
                     </p>
