@@ -16,11 +16,11 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
         .filter(s => s.length > 0 && s.includes('##'))
 
     return (
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-6 md:gap-10">
             {sections.map((section, idx) => (
                 <div
                     key={idx}
-                    className="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-slate-200/50"
+                    className="bg-white p-5 md:p-10 rounded-2xl md:rounded-3xl shadow-sm border border-slate-200/50"
                 >
                     <div className="prose prose-slate prose-lg max-w-none">
                         <ReactMarkdown

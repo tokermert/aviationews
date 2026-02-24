@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { supabase } from '@/lib/supabase'
 import MarkdownRenderer from '@/components/MarkdownRenderer'
 import { Calendar, ChevronRight, Plane } from 'lucide-react'
@@ -24,6 +24,7 @@ export default function Home() {
   const [newsletters, setNewsletters] = useState<Newsletter[]>([])
   const [selectedNewsletter, setSelectedNewsletter] = useState<Newsletter | null>(null)
   const [loading, setLoading] = useState(true)
+  const contentRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     async function fetchNewsletters() {
@@ -44,6 +45,16 @@ export default function Home() {
     fetchNewsletters()
   }, [])
 
+  const handleNewsletterSelect = (newsletter: Newsletter) => {
+    setSelectedNewsletter(newsletter)
+    // Mobile scroll to content
+    if (window.innerWidth < 768) {
+      setTimeout(() => {
+        contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 100)
+    }
+  }
+
   if (loading) {
     return (
       <div className="flex items-center justify-center h-[calc(100vh-64px)] bg-aviation-white/50">
@@ -53,9 +64,9 @@ export default function Home() {
   }
 
   return (
-    <div className="flex h-[calc(100vh-64px)] overflow-hidden">
+    <div className="flex flex-col md:flex-row h-auto md:h-[calc(100vh-64px)] overflow-x-hidden md:overflow-hidden">
       {/* Sidebar */}
-      <aside className="w-80 border-r border-slate-200 bg-white overflow-y-auto flex-shrink-0">
+      <aside className="w-full md:w-80 border-b md:border-b-0 md:border-r border-slate-200 bg-white md:overflow-y-auto flex-shrink-0">
         <div className="p-4 border-b border-slate-100 bg-slate-50/50">
           <h2 className="text-xs font-semibold text-aviation-navy uppercase tracking-wider">Haftalık Bültenler</h2>
         </div>
@@ -63,9 +74,9 @@ export default function Home() {
           {newsletters.map((newsletter) => (
             <button
               key={newsletter.id}
-              onClick={() => setSelectedNewsletter(newsletter)}
+              onClick={() => handleNewsletterSelect(newsletter)}
               className={cn(
-                "w-full text-left p-6 transition-all outline-none flex items-center justify-between group",
+                "w-full text-left p-5 md:p-6 transition-all outline-none flex items-center justify-between group",
                 selectedNewsletter?.id === newsletter.id
                   ? "bg-slate-50"
                   : "hover:bg-slate-50/50"
@@ -97,11 +108,11 @@ export default function Home() {
       </aside>
 
       {/* Main Content */}
-      <section className="flex-1 overflow-y-auto bg-aviation-white/30">
+      <section ref={contentRef} className="flex-1 md:overflow-y-auto bg-aviation-white/30 scroll-mt-20">
         {selectedNewsletter ? (
-          <article className="max-w-4xl mx-auto py-8 px-8">
+          <article className="max-w-4xl mx-auto py-8 md:py-12 px-4 md:px-8">
             <header className="mb-8 border-b border-slate-200 pb-6">
-              <h1 className="text-4xl font-black text-aviation-navy mb-4 leading-tight uppercase italic tracking-tighter">
+              <h1 className="text-3xl md:text-4xl font-black text-aviation-navy mb-4 leading-tight uppercase italic tracking-tighter">
                 {selectedNewsletter.date}
               </h1>
               <div className="flex items-center gap-4 text-sm text-slate-600 font-semibold">
