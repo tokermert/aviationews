@@ -9,7 +9,7 @@ interface MarkdownRendererProps {
 
 export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
     return (
-        <div className="prose prose-slate prose-lg max-w-none">
+        <div className="prose prose-slate prose-xl max-w-none leading-loose">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {content}
             </ReactMarkdown>
