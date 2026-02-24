@@ -33,42 +33,42 @@ body {
   line-height: 1.6;
   font-size: 1.0625rem;
   /* Reduced by 1px (17px) */
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   /* Tightened */
-  color: #374151;
+  color: #374151 !important;
 }
 
 /* Category headers - Blue & 2px larger */
 .prose h1,
 .prose h2 {
   font-weight: 800;
-  font-size: 1.875rem;
+  font-size: 1.875rem !important;
   /* Increased by 2px (30px) */
   margin-top: 0 !important;
   margin-bottom: 2rem !important;
-  color: #2563eb;
+  color: #2563eb !important;
   /* Corporate Blue */
   letter-spacing: -0.025em;
-  border-bottom: 2px solid #eff6ff;
-  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #eff6ff !important;
+  padding-bottom: 0.75rem !important;
 }
 
 /* News headers - Orange & 2px larger */
 .prose h3 {
   font-weight: 800;
-  font-size: 1.375rem;
+  font-size: 1.375rem !important;
   /* Increased by 2px (22px) */
-  margin-top: 1.5rem !important;
-  margin-bottom: 0.75rem !important;
-  color: #f97316;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  color: #f97316 !important;
   /* Aviation/News Orange */
   letter-spacing: -0.01em;
 }
 
 /* Link styling */
 .prose a {
-  color: #2563eb;
-  text-decoration: underline;
+  color: #2563eb !important;
+  text-decoration: underline !important;
   text-underline-offset: 4px;
   font-weight: 700;
   transition: all 0.2s;
@@ -77,34 +77,37 @@ body {
 }
 
 .prose a:hover {
-  color: #1d4ed8;
+  color: #1d4ed8 !important;
   background: #eff6ff;
 }
 
 /* Source line tightening and formatting */
 .prose strong {
-  margin-top: -0.25rem !important;
+  margin-top: 0 !important;
   /* Move closer to text above */
+  padding-top: 0 !important;
   display: inline-block;
-  color: #64748b;
-  font-size: 1.0625rem;
+  color: #64748b !important;
+  font-size: 1.0625rem !important;
   /* Same as main text (17px) */
   font-weight: 600;
 }
 
-/* Handle "Kaynak: " specifically to ensure it's inline with link */
+/* Handle source paragraph specifically */
 .prose p:has(strong) {
-  margin-top: -0.5rem;
+  margin-top: -0.25rem !important;
   /* Tighten paragraph containing source */
+  margin-bottom: 2.5rem !important;
+  /* Kaynak sonrası bir satır boşluk */
 }
 
 /* Remove bullets if strong is inside a list or has custom markers */
 .prose li::marker {
-  color: #2563eb;
+  color: #2563eb !important;
 }
 
 .prose hr {
-  margin: 2.5rem 0;
+  margin: 3rem 0;
   border-color: #f1f5f9;
 }
 
